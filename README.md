@@ -100,3 +100,4 @@ Slice literals
 
 * Create a slice(and array) using `make()`
 * 2 arguments: type and length/capacity
+* `sli = make([]int, 10)
