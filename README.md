@@ -46,3 +46,5 @@ Three subdirectories
        └──linux_amd64/
           └──say.a
 ```
+
+Also refer https://github.com/golang-standards/project-layout
