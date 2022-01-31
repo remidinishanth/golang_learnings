@@ -26,3 +26,10 @@ Go makes it easy to “fire off” functions to be run as very lightweight threa
   * No inheritance
   * No constructors
   * No generics
+
+### Workspaces
+
+Three subdirectories
+* `src` - contains source code files
+* `pkg` - contains packages(libraries)
+* `bin` - contains executables
