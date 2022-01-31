@@ -75,3 +75,10 @@ for i, v range x {
   * **Pointer** indicates the start of the slice
   * **Length** `len()` is the number of elements in the slice
   * **Capacity** `cap()` is maximum number of elements - From start of slice to end of array 
+
+```go
+  arr := [...]int{1, 2, 3, 4, 5}
+
+  sli := arr[1:3]
+  fmt.Println(cap(sli), len(sli)) // 4 2
+```
