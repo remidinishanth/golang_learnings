@@ -82,3 +82,6 @@ for i, v range x {
   sli := arr[1:3]
   fmt.Println(cap(sli), len(sli)) // 4 2
 ```
+
+* Writing to slice changes underlying array
+* Overlapping slices refer to the same array elements
