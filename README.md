@@ -73,5 +73,5 @@ for i, v range x {
 * Variable size, up to the whole array
 * Slice has 3 properties
   * **Pointer** indicates the start of the slice
-  * **Length** is the number of elements in the slice
-  * **Capacity** is maximum number of elements - From start of slice to end of array 
+  * **Length** `len()` is the number of elements in the slice
+  * **Capacity** `cap()` is maximum number of elements - From start of slice to end of array 
