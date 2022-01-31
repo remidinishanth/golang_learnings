@@ -50,3 +50,9 @@ Three subdirectories
 ```
 
 Also refer https://github.com/golang-standards/project-layout
+
+#### Arrays
+
+* `var x [5]int = [5]{1, 2, 3, 4, 5}` Array pre-defined with values
+  * Length of literal must be length of array
+  * `...` for size can also be used `x := [...]int{1, 2, 3, 4, 5}`
