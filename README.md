@@ -16,6 +16,8 @@ There is also `go doc` for creating documentation and `go list` to list all the 
 * Memory Locality
 * Readability
 
+Three things that make Go fast, fun, and productive: **interfaces**, **reflection**, and **concurrency**.
+
 #### Concurrency
 * **Concurrent**:
 Go makes it easy to “fire off” functions to be run as very lightweight threads. These threads are called **goroutines** in Go.
