@@ -95,3 +95,7 @@ Slice literals
 ```go
 []bool{true, true, false}
 ```
+
+#### Variable Slices
+
+* Create a slice(and array) using `make()`
