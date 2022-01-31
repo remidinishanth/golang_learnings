@@ -18,3 +18,10 @@ Go makes it easy to “fire off” functions to be run as very lightweight threa
 * **Channels**: Communication with these goroutines is done, either via shared state or via channels.
 
 ![](images/go_cli.png)
+
+#### Objects in Go
+* Go uses **structs** with associated methods.
+* Simplified implementation of classes
+  * No inheritance
+  * No constructors
+  * No generics
