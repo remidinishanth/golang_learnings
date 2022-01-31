@@ -33,3 +33,16 @@ Three subdirectories
 * `src` - contains source code files
 * `pkg` - contains packages(libraries)
 * `bin` - contains executables
+
+```
+    ├──src/
+    |  ├──main.go
+    |  ├──say/
+    |  |  ├──say.go
+    |  |  ├──say_test.go
+    ├──bin/
+    |  ├──say
+    └──pkg/
+       └──linux_amd64/
+          └──say.a
+```
