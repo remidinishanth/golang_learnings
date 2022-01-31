@@ -10,3 +10,8 @@
 * Garbage Collection
 * Memory Locality
 * Readability
+
+#### Concurrency
+* **Concurrent**:
+Go makes it easy to “fire off” functions to be run as very lightweight threads. These threads are called goroutines in Go.
+* **Channels**: Communication with these goroutines is done, either via shared state or via channels.
