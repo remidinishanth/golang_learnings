@@ -99,3 +99,4 @@ Slice literals
 #### Variable Slices
 
 * Create a slice(and array) using `make()`
+* 2 arguments: type and length/capacity
