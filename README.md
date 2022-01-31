@@ -3,6 +3,7 @@
 * https://gobyexample.com/
 * https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/index.html
 * https://www.openmymind.net/The-Little-Go-Book/
+* https://github.com/joncalhoun/GoBooks
 
 ### Go's 21st Century Characteristics
 * Concurrency
