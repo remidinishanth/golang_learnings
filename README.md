@@ -7,6 +7,8 @@
 
 ![](images/go_cli.png)
 
+There is also `go doc` for creating documentation and `go list` to list all the installed packages
+
 ### Go's 21st Century Characteristics
 * Concurrency
 * Distributed Systems
