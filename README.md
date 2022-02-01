@@ -54,6 +54,10 @@ Three subdirectories
 
 Also refer https://github.com/golang-standards/project-layout
 
+### Basics
+
+In Go, a name is **exported** if it begins with a capital letter. For example, `Pizza` is an exported name, as is `Pi`, which is exported from the math package.
+
 #### Arrays
 
 * `var x [5]int = [5]int{1, 2, 3, 4, 5}` Array pre-defined with values
