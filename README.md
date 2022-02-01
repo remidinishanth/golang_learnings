@@ -103,3 +103,30 @@ Slice literals
 
 * Create a slice(and array) using `make()`
 * `sli = make([]int, 10)` 2 arguments: type and length/capacity
+
+#### Byte Slices and Strings
+
+```go
+bs := []byte{71, 111}
+fmt.Printf("%s", bs) // Output: Go
+```
+
+`%s` converts the bute slice to a string
+
+```go
+s := "Wow look at me"
+bs := []byte(s)
+fmt.Printf("%s", bs) // Output: Wow look at me
+fmt.Printf("%d", bs) // Output: [87 111 119 32 108 111 111 107 32 97 116 32 109 101]
+```
+
+If we use unicode characters in a string
+
+```go
+bs := []byte("◺")
+fmt.Println(bs) // Output: [226 151 186]
+s := string(bs)
+fmt.Println(len(s)) // Output: 3
+
+fmt.Println(utf8.RuneCountInString(s)) // Output: 1
+```
