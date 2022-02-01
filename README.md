@@ -117,7 +117,7 @@ rune // alias for int32
      // represents a Unicode code point
 ```
 
-In Go, a string is in effect a read-only slice of bytes.
+In Go, a string is in effect a read-only slice of bytes. Ref: https://go.dev/blog/strings
 
 ```go
 bs := []byte{71, 111}
