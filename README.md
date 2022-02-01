@@ -135,6 +135,7 @@ fmt.Printf("%d", bs) // Output: [87 111 119 32 108 111 111 107 32 97 116 32 109 
 
 If we use unicode characters in a string
 
+
 ```go
 bs := []byte("◺")
 fmt.Println(bs) // Output: [226 151 186]
@@ -142,4 +143,14 @@ s := string(bs)
 fmt.Println(len(s)) // Output: 3
 
 fmt.Println(utf8.RuneCountInString(s)) // Output: 1
+
+fmt.Printf("%+q\n", s) // "\u25fa"
+fmt.Printf("%x\n", s) // e297ba
+fmt.Printf("% x\n", s) // e2 97 ba
+
+// Lower left triangle unicode (U+25FA)
+// UTF-8 (binary)	11100010:10010111:10111010
+// UTF-16 (hex)	0x25FA (25fa)
 ```
+
+Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding-identify-single-byte-and-double-byte-characters
