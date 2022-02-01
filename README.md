@@ -149,6 +149,7 @@ fmt.Printf("%x\n", s) // e297ba
 fmt.Printf("% x\n", s) // e2 97 ba
 
 // Lower left triangle unicode (U+25FA)
+// UTF-8 (hex)	0xE2 0x97 0xBA (e297ba)
 // UTF-8 (binary)	11100010:10010111:10111010
 // UTF-16 (hex)	0x25FA (25fa)
 ```
