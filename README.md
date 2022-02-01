@@ -124,7 +124,7 @@ bs := []byte{71, 111}
 fmt.Printf("%s", bs) // Output: Go
 ```
 
-`%s` converts the bute slice to a string
+`%s` converts the byte slice to a string
 
 ```go
 s := "Wow look at me"
@@ -134,7 +134,6 @@ fmt.Printf("%d", bs) // Output: [87 111 119 32 108 111 111 107 32 97 116 32 109 
 ```
 
 If we use unicode characters in a string
-
 
 ```go
 bs := []byte("◺")
