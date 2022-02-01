@@ -117,6 +117,8 @@ rune // alias for int32
      // represents a Unicode code point
 ```
 
+In Go, a string is in effect a read-only slice of bytes.
+
 ```go
 bs := []byte{71, 111}
 fmt.Printf("%s", bs) // Output: Go
