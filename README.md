@@ -111,6 +111,13 @@ Slice literals
 #### Byte Slices and Strings
 
 ```go
+byte // alias for uint8
+
+rune // alias for int32
+     // represents a Unicode code point
+```
+
+```go
 bs := []byte{71, 111}
 fmt.Printf("%s", bs) // Output: Go
 ```
