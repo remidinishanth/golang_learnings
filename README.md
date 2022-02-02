@@ -5,6 +5,7 @@
 * https://www.openmymind.net/The-Little-Go-Book/
 * https://github.com/joncalhoun/GoBooks
 * https://github.com/uber-go/guide/blob/master/style.md
+* https://www.miek.nl/go/
 
 ![](images/go_cli.png)
 
