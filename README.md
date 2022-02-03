@@ -158,7 +158,7 @@ fmt.Printf("% x\n", s) // e2 97 ba
 
 Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding-identify-single-byte-and-double-byte-characters
 
-### Struct
+#### Struct
 
 Struct fields can be accessed through a struct pointer.
 
@@ -187,4 +187,38 @@ var (
     v3 = Vertex{}      // X:0 and Y:0
     p  = &Vertex{1, 2} // has type *Vertex
 )
+```
+
+#### methods
+
+Go does not have classes. However, you can define methods on types.
+
+A method is a function with a special receiver argument.
+
+The receiver appears in its own argument list between the func keyword and the method name.
+
+```go
+type Person struct {
+    name string
+    age int
+    city,phone string
+}
+
+// A person method
+func (p Person ) SayHello() {
+    fmt.Printf("Hi, I am %s, from %s\n", p.name, p.city)
+}
+
+// A person method
+func (p Person) GetDetails() {
+    fmt.Printf("[Name: %s, Age: %d, City: %s, Phone: %s]\n", p.name,p.age, p.city, p.phone)
+}
+```
+
+If you want to modify the data of a receiver from the method, the receiver must be a pointer.
+
+```go
+func (p *Person ) SayHello() {
+    //Implementations here 
+}
 ```
