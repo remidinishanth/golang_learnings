@@ -176,6 +176,7 @@ func main() {
 }
 ```
 
+We can list just a subset of fields by using the `Name:` syntax. (And the order of named fields is irrelevant.)
 
 ```go
 var (
