@@ -109,6 +109,7 @@ Slice literals
 
 * Create a slice(and array) using `make()`
 * `sli = make([]int, 10)` 2 arguments: type and length/capacity
+* `b := make([]int, 0, 5) // len(b)=0, cap(b)=5`
 
 #### Byte Slices and Strings
 
