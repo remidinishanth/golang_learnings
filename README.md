@@ -189,7 +189,9 @@ var (
 )
 ```
 
-#### methods
+#### Methods
+
+Refer https://go.dev/tour/methods/1
 
 Go does not have classes. However, you can define methods on types.
 
