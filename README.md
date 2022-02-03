@@ -213,6 +213,11 @@ func (p Person ) SayHello() {
 func (p Person) GetDetails() {
     fmt.Printf("[Name: %s, Age: %d, City: %s, Phone: %s]\n", p.name,p.age, p.city, p.phone)
 }
+
+func main() {
+    p := Person{name:"Nishanth", age:24, city:"Warangal"}
+    p.SayHello()
+}
 ```
 
 If you want to modify the data of a receiver from the method, the receiver must be a pointer.
