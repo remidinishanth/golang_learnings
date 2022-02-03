@@ -71,7 +71,7 @@ Iterating
 ```go
 x := [3]int{1, 2, 3}
 
-for i, v range x {
+for i, v := range x {
     fmt.Printf("index %d, val %d", i, v)
 }
 ```
