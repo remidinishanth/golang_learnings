@@ -216,7 +216,7 @@ func (p Person) GetDetails() {
 
 func main() {
     p := Person{name:"Nishanth", age:24, city:"Warangal"}
-    p.SayHello()
+    p.SayHello() // Hi, I am Nishanth, from Warangal
 }
 ```
 
