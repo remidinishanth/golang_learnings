@@ -255,3 +255,12 @@ func main() {
 #### defer
 
 The deferred **call's arguments are evaluated immediately**, but the function call is not executed until the surrounding function returns.
+
+```go
+func main() {
+    i := 1
+    defer fmt.Println(i+1)
+    i++
+    fmt.Print("value of i:: ")
+}
+```
