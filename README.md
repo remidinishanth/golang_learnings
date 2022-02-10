@@ -270,3 +270,5 @@ func main() {
 Go programs are organized into packages. A package is a collection of source files in the same directory that are compiled together. Functions, types, variables, and constants defined in one source file are visible to all other source files within the same package.
 
 Ref: https://go.dev/doc/code
+
+By convention, one-method interfaces are named by the method name plus an `-er` suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
