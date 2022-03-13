@@ -1,5 +1,7 @@
 # Golang
 
+Go is a general-purpose language designed with systems programming in mind.
+
 * https://gobyexample.com/
 * https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/index.html
 * https://www.openmymind.net/The-Little-Go-Book/
