@@ -174,6 +174,8 @@ A method call `x.m()` is valid if the method set of (the type of) `x` contains `
 
 Ref: https://go.dev/ref/spec#Calls
 
+Also checkout https://go.dev/tour/methods/1
+
 #### Struct
 
 A struct is a sequence of named elements, called fields, each of which has a name and a type.
