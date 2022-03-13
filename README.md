@@ -226,13 +226,15 @@ func main() {
 }
 ```
 
-If you want to modify the data of a receiver from the method, the **receiver must be a pointer**. Here go **interprets** `p.SayHello()` as `(&p).SayHello()` since the method has a pointer receiver. This makes our life easier, We could also use `p1 := &Person{name:"Nishanth", city:"Warangal"}` and call `p1.SayHello()`.
+If you want to modify the data of a receiver from the method, the **receiver must be a pointer**. 
 
 ```go
 func (p *Person ) SayHello() {
     //Implementations here 
 }
 ```
+
+Here go **interprets** `p.SayHello()` as `(&p).SayHello()` since the method has a pointer receiver. This makes our life easier, We could also use `p1 := &Person{name:"Nishanth", city:"Warangal"}` and call `p1.SayHello()`.
 
 You can declare a method on non-struct types, too.
 
