@@ -168,6 +168,8 @@ A type determines a set of values together with operations and methods specific 
 
 #### Struct
 
+A struct is a sequence of named elements, called fields, each of which has a name and a type.
+
 Struct fields can be accessed through a struct pointer.
 
 To access the field X of a struct when we have the struct pointer p we could write `(*p).X`. However, that notation is cumbersome, so the language permits us instead to write just `p.X`, without the explicit dereference.
