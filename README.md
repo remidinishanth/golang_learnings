@@ -164,7 +164,7 @@ Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding
 
 #### Type
 
-A type determines a set of values together with operations and methods specific to those values.
+A type determines a set of values together with operations and methods specific to those values. Ref: https://go.dev/ref/spec#Method_sets
 
 #### Struct
 
