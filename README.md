@@ -251,10 +251,13 @@ So what’s the difference between pointer and non-pointer method receivers?
 Simply stated: you can treat the receiver as if it was an argument being passed to the method. All the same reasons why you might want to pass by value or pass by reference apply.
 
 Reasons why you would want to pass by reference as opposed to by value:
-
 * You want to actually modify the receiver (“read/write” as opposed to just “read”)
 * The struct is very large and a deep copy is expensive
 * Consistency: if some of the methods on the struct have pointer receivers, the rest should too. This allows predictability of behavior.
+
+There are two reasons to use a pointer receiver.
+* The first is so that the method can modify the value that its receiver points to.
+* The second is to avoid copying the value on each method call. This can be more efficient if the receiver is a large struct, for example.
 
 ```go
 package main
