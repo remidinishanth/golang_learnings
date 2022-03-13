@@ -78,6 +78,8 @@ for i, v := range x {
 }
 ```
 
+`range` allows to iterate through array, pointer to array, slice, string, map or values received on a channel. Read more at https://medium.com/golangspec/for-statement-and-its-all-faces-in-golang-abcbdc011f81
+
 #### Slice
 
 * A "window" on an **underlying array**
