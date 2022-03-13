@@ -238,11 +238,60 @@ If you want to modify the data of a receiver from the method, the **receiver mus
 A method call `x.m()` is valid if the method set of (the type of) `x` contains `m` and the argument list can be assigned to the parameter list of `m`. If `x` is addressable and `&x`’s method set contains `m`, `x.m()` is shorthand for `(&x).m()`
 
 
+In Go, you can define methods using both pointer and non-pointer method receivers. The former looks like `func (t *Type)` and the latter looks like `func (t Type)`.
+
 ```go
 func (p *Person ) SayHello() {
     //Implementations here 
 }
 ```
+
+So what’s the difference between pointer and non-pointer method receivers?
+
+Simply stated: you can treat the receiver as if it was an argument being passed to the method. All the same reasons why you might want to pass by value or pass by reference apply.
+
+Reasons why you would want to pass by reference as opposed to by value:
+
+* You want to actually modify the receiver (“read/write” as opposed to just “read”)
+* The struct is very large and a deep copy is expensive
+* Consistency: if some of the methods on the struct have pointer receivers, the rest should too. This allows predictability of behavior.
+
+```go
+package main
+
+import "fmt"
+
+type Mutatable struct {
+    a int
+    b int
+}
+
+func (m Mutatable) StayTheSame() {
+    m.a = 5
+    m.b = 7
+}
+
+func (m *Mutatable) Mutate() {
+    m.a = 5
+    m.b = 7
+}
+
+func main() {
+    m := &Mutatable{0, 0}
+    fmt.Println(m)
+    m.StayTheSame()
+    fmt.Println(m)
+    m.Mutate()
+    fmt.Println(m)
+}
+
+// Output:
+// &{0 0}
+// &{0 0}
+// &{5 7}
+```
+
+#### Method on non-struct type
 
 You can declare a method on non-struct types, too.
 
