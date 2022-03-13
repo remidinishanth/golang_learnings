@@ -164,7 +164,15 @@ Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding
 
 #### Type
 
-A type determines a set of values together with operations and methods specific to those values. Ref: https://go.dev/ref/spec#Method_sets
+A type determines a set of values together with operations and methods specific to those values.
+
+The method set of an interface type is its interface. The method set of any other type `T` consists of all methods declared with receiver type `T`. The method set of the corresponding pointer type `*T` is the set of all methods declared with receiver `*T` or `T` (that is, it also contains the method set of `T`). 
+
+Ref: https://go.dev/ref/spec#Method_sets
+
+A method call `x.m()` is valid if the method set of (the type of) `x` contains `m` and the argument list can be assigned to the parameter list of m. If `x` is addressable and `&x`'s method set contains `m`, `x.m()` is shorthand for `(&x).m()`.
+
+Ref: https://go.dev/ref/spec#Calls
 
 #### Struct
 
