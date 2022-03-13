@@ -162,6 +162,10 @@ fmt.Printf("% x\n", s) // e2 97 ba
 
 Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding-identify-single-byte-and-double-byte-characters
 
+#### Type
+
+A type determines a set of values together with operations and methods specific to those values.
+
 #### Struct
 
 Struct fields can be accessed through a struct pointer.
