@@ -9,6 +9,8 @@ Go is a general-purpose language designed with systems programming in mind.
 * https://github.com/uber-go/guide/blob/master/style.md
 * https://www.miek.nl/go/
 
+Also refer https://yourbasic.org/golang/
+
 ![](images/go_cli.png)
 
 There is also `go doc` for creating documentation and `go list` to list all the installed packages
