@@ -68,7 +68,7 @@ In Go, a name is **exported** if it begins with a capital letter. For example, `
 * The type `[n]T` is an array of `n` values of type `T`.
 * `var x [5]int = [5]int{1, 2, 3, 4, 5}` Array pre-defined with values
   * Length of literal must be length of array
-  * `...` for size can also be used `x := [...]int{1, 2, 3, 4, 5}`
+  * `...` for size can also be used `x := [...]int{1, 2, 3, 4, 5}`, when using `[...]` size will be deduced from `{ ... }`
 
 Iterating
 
