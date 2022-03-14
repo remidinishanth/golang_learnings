@@ -9,7 +9,7 @@ Go is a general-purpose language designed with systems programming in mind.
 * https://github.com/uber-go/guide/blob/master/style.md
 * https://www.miek.nl/go/
 
-Also refer https://yourbasic.org/golang/
+Also refer https://yourbasic.org/golang/ and https://www.programming-books.io/essential/go/
 
 ![](images/go_cli.png)
 
@@ -116,6 +116,19 @@ Slice literals
 * Create a slice(and array) using `make()`
 * `sli = make([]int, 10)` 2 arguments: type and length/capacity
 * `b := make([]int, 0, 5) // len(b)=0, cap(b)=5`
+
+```go
+slice := make([]int, 0, 5)
+// append element to end of slice
+slice = append(slice, 5)
+// append multiple elements to end
+slice = append(slice, 3, 4)
+
+// appending slice to slice
+a := []string{"!"}
+a2 := []string{"Hello", "world"}
+a = append(a, a2...)
+```
 
 #### Byte Slices and Strings
 
