@@ -177,6 +177,16 @@ fmt.Printf("% x\n", s) // e2 97 ba
 
 Also check: https://stackoverflow.com/questions/44565859/how-does-utf-8-encoding-identify-single-byte-and-double-byte-characters
 
+A string contains characters as unicode points, not bytes. `len(string)` returns the number of bytes in this string, but not the number of characters. 
+Therefore, we are converting the string to `rune` array and then finding the array length.
+
+```go
+    var str = "ab£"
+    var length = len([]rune(str))
+    println("Length of the string is : ", length) // 3
+    println("Output of len(str) is : ", len(str)) // 4
+```
+
 #### Type
 
 A type determines a set of values together with operations and methods specific to those values.
