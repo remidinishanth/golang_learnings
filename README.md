@@ -373,3 +373,18 @@ Go programs are organized into packages. A package is a collection of source fil
 Ref: https://go.dev/doc/code
 
 By convention, one-method interfaces are named by the method name plus an `-er` suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
+
+### new
+
+`new` takes a type as an argument, allocates enough memory to fit a value of that type and returns a pointer to it.
+
+```go
+func one(xPtr *int) {
+  *xPtr = 1
+}
+func main() {
+  xPtr := new(int)
+  one(xPtr)
+  fmt.Println(*xPtr) // x is 1
+}
+```
