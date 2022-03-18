@@ -410,3 +410,7 @@ func main() {
 // {0 0 0}
 // &{0 0 0}
 ```
+
+### Struct tags in go
+
+https://www.digitalocean.com/community/tutorials/how-to-use-struct-tags-in-go
