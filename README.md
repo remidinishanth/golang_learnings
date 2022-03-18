@@ -130,6 +130,8 @@ a2 := []string{"Hello", "world"}
 a = append(a, a2...)
 ```
 
+A good rule of thumb when declaring variables is to use the key- word var when declaring variables that will be initialized to their zero value, and to use the short variable declaration operator when you’re providing extra initialization or making a function call. Ref: Go in Action
+
 #### Byte Slices and Strings
 
 ```go
