@@ -388,3 +388,23 @@ func main() {
   fmt.Println(*xPtr) // x is 1
 }
 ```
+
+`new` with struct
+
+```go
+type Circle struct {
+	x, y, r float64
+}
+
+func main() {
+	var x Circle
+	fmt.Println(x)
+	c := new(Circle)
+	fmt.Println(c)
+
+}
+
+// Output:
+// {0 0 0}
+// &{0 0 0}
+```
