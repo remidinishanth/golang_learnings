@@ -9,7 +9,7 @@ Go is a general-purpose language designed with systems programming in mind.
 * https://github.com/uber-go/guide/blob/master/style.md
 * https://www.miek.nl/go/
 
-Also refer https://yourbasic.org/golang/ and https://www.programming-books.io/essential/go/
+Also refer https://yourbasic.org/golang/ and https://www.programming-books.io/essential/go/ and https://www.golang-book.com/books/intro/9
 
 ![](images/go_cli.png)
 
