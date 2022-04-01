@@ -414,3 +414,12 @@ func main() {
 ### Struct tags in go
 
 https://www.digitalocean.com/community/tutorials/how-to-use-struct-tags-in-go
+
+
+### Sharing memory by communicating
+
+Don't communicate by sharing memory; share memory by communicating
+
+In idiomatic Go programs you won't see a lot of mutexes, condition variables and critical areas protecting shared data. In fact, you probably won't see much locking at all. This is because Go encourages programmers to use channels instead, and channels are built into the language, with awesome features like select, and so on. Proper use of channels removes the need for more explicit locking, is easier to write correctly, tune for performance, and debug.
+
+Ref: https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-the-head/
