@@ -427,3 +427,5 @@ Ref: https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-th
 
 * A Go plugin is package compiled with the `-buildmode=plugin` which creates a shared object (.so) library file instead of the standard archive (.a) library file. 
 * Using the standard library's plugin package, Go can dynamically load the shared object file at runtime to access exported elements such as functions an variables.
+
+Ref: https://medium.com/learning-the-go-programming-language/writing-modular-go-programs-with-plugins-ec46381ee1a9
