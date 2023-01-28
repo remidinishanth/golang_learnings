@@ -423,3 +423,6 @@ Don't communicate by sharing memory; share memory by communicating
 In idiomatic Go programs you won't see a lot of mutexes, condition variables and critical areas protecting shared data. In fact, you probably won't see much locking at all. This is because Go encourages programmers to use channels instead, and channels are built into the language, with awesome features like select, and so on. Proper use of channels removes the need for more explicit locking, is easier to write correctly, tune for performance, and debug.
 
 Ref: https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-the-head/
+
+
+* A Go plugin is package compiled with the `-buildmode=plugin` which creates a shared object (.so) library file instead of the standard archive (.a) library file. 
