@@ -430,3 +430,34 @@ Ref: https://eli.thegreenplace.net/2018/go-hits-the-concurrency-nail-right-on-th
 * Using the standard library's plugin package, Go can dynamically load the shared object file at runtime to access exported elements such as functions an variables.
 
 Ref: https://medium.com/learning-the-go-programming-language/writing-modular-go-programs-with-plugins-ec46381ee1a9
+
+### Interface embedding
+
+Such a pattern is even used in Golang sort package https://go.dev/src/sort/sort.go for reverse
+
+```go
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+type RandomInterface interface {
+	func1(int) int
+	func2(int) int
+}
+
+type B struct {
+	RandomInterface
+}
+
+func (v B) func1(x int) int {
+	return x - 1
+}
+
+func main() {
+	var interfaceVariable RandomInterface
+	interfaceVariable = B{}
+	fmt.Println(interfaceVariable.func1(2))
+}
+```
