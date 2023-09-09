@@ -123,4 +123,6 @@ func init() {
 }
 ```
 
-https://vyskocil.org/blog/implement-sql-database-driver-in-100-lines-of-go/
+Ref:
+* https://vyskocil.org/blog/implement-sql-database-driver-in-100-lines-of-go/
+* https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/05.1.html
