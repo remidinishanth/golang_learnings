@@ -10,6 +10,53 @@ Ref: https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis
 
 Source:  Self referential functions and design by Rob Pike http://commandcenter.blogspot.com.au/2014/01/self-referential-functions-and-design.html
 
+## Singleton
+
+https://stackoverflow.com/questions/1823286/singleton-in-go
+
+Two approaches
+* `sync.Once`
+* `init()`
+
+```go
+ package singleton
+
+ import "sync"
+
+ type singleton struct {
+ }
+
+ var instance *singleton
+ var once sync.Once
+
+ func GetInstance() *singleton {
+     once.Do(func() {
+         instance = &singleton{}
+     })
+     return instance
+ }
+```
+
+Ref: http://marcio.io/2015/07/singleton-pattern-in-go/
+
+If we just do, then it might not be thread safe
+
+```
+package singleton
+
+type singleton struct {
+}
+
+var instance *singleton
+
+func GetInstance() *singleton {
+	if instance == nil {
+		instance = &singleton{}   // <--- NOT THREAD SAFE
+	}
+	return instance
+}
+```
+
 ## Func implementing interface
 
 From go-cloud, health.go
