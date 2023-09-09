@@ -57,3 +57,5 @@ healthHandler.Add(health.CheckerFunc(func() error {
   // ...
 }))
 ```
+
+Inspired from `HandlerFunc` from https://pkg.go.dev/net/http?utm_source=godoc#ServeMux.HandleFunc
