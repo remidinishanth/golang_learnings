@@ -106,3 +106,7 @@ healthHandler.Add(health.CheckerFunc(func() error {
 ```
 
 Inspired from `HandlerFunc` from https://pkg.go.dev/net/http?utm_source=godoc#ServeMux.HandleFunc
+
+## Golang SQL Package 
+
+https://vyskocil.org/blog/implement-sql-database-driver-in-100-lines-of-go/
