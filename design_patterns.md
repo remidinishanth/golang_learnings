@@ -109,4 +109,15 @@ Inspired from `HandlerFunc` from https://pkg.go.dev/net/http?utm_source=godoc#Se
 
 ## Golang SQL Package 
 
+Package sql provides a generic interface around SQL (or SQL-like) databases.
+
+The sql package must be used in conjunction with a database driver. See https://golang.org/s/sqldrivers for a list of drivers.
+
+```
+// init is automatically invoked when the driver is imported
+func init() {
+	sql.Register("godynamo", &Driver{})
+}
+```
+
 https://vyskocil.org/blog/implement-sql-database-driver-in-100-lines-of-go/
