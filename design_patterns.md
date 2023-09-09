@@ -113,6 +113,9 @@ Package sql provides a generic interface around SQL (or SQL-like) databases.
 
 The sql package must be used in conjunction with a database driver. See https://golang.org/s/sqldrivers for a list of drivers.
 
+This function is in the database/sql package for registering database drivers when you use third-party database drivers. 
+All of these should call the `Register(name string, driver driver.Driver)` function in `init()` in order to register themselves.
+
 ```
 // init is automatically invoked when the driver is imported
 func init() {
