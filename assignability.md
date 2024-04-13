@@ -167,3 +167,52 @@ func main() {
 	Use(func() io.Reader { return G() })
 }
 ```
+
+On the other hand, say we have a `func(*bytes.Buffer)`. Now we can’t use that as a `func(io.Reader)`: You can’t call it with an `io.Reader`. 
+
+But we can do the reverse. 
+
+If we have a `*bytes.Buffer`, we can call a `func(io.Reader)` with it. Thus, function arguments reverse the subtype relationship: If `A` is a subtype of `B`, then `func(B)` could be a subtype of `func(A)`. This is called **contravariance**.
+
+```go
+func F(r io.Reader) {
+	useReader(r)
+}
+
+func G(r *bytes.Buffer) {
+	useReader(r)
+}
+
+func Use(f func(*bytes.Buffer)) {
+	b := new(bytes.Buffer)
+	f(b)
+}
+
+func main() {
+	Use(F) // Doesn't work right now; but *could* be made equivalent to…
+	Use(func(r *bytes.Buffer) { F(r) })
+
+	Use(G) // Works
+}
+```
+
+So, func is contravariant for arguments and covariant for return values. Of course, we can combine the two: If A and C are subtypes of B and D respectively, we can make func(B) C a subtype of func(A) D, by converting like this:
+
+```go
+// *os.PathError implements error
+
+func F(r io.Reader) *os.PathError {
+	// ...
+}
+
+func Use(f func(*bytes.Buffer) error) {
+	b := new(bytes.Buffer)
+	err := f(b)
+	useError(err)
+}
+
+func main() {
+	Use(F) // Could be made to be equivalent to
+	Use(func(r *bytes.Buffer) error { return F(r) })
+}
+```
