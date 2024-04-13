@@ -131,3 +131,30 @@ Ref: https://go101.org/article/channel.html
 * x is the predeclared identifier nil, T is a type parameter, and x is assignable to each type in T's type set.
 * V is not a named type, T is a type parameter, and x is assignable to each type in T's type set.
 * V is a type parameter and T is not a named type, and values of each type in V's type set are assignable to T.
+
+## Variance
+
+https://blog.merovius.de/posts/2018-06-03-why-doesnt-go-have-variance-in/
+
+```go
+func F() io.Reader {
+	return new(bytes.Buffer)
+}
+
+func G() *bytes.Buffer {
+	return new(bytes.Buffer)
+}
+
+func Use(f func() io.Reader) {
+	// useReader(f())
+}
+
+func main() {
+	Use(F) // Works
+
+	Use(G) // Doesn't work right now; but *could* be made equivalent to…
+	// cannot use G (value of type func() *bytes.Buffer) as func() io.Reader value in argument to Use
+
+	Use(func() io.Reader { return G() })
+}
+```
