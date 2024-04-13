@@ -53,6 +53,10 @@ type T4 T3
 // The underlying type of []T1, T3, and T4 is []T1.
 
 func main() {
+	var t1 T1 = "ABC"
+	fmt.Printf("t1: [%T, %v]\n", t1, t1)
+	// t1: [main.T1, ABC]
+
 	var t3 T3 = []T1{"a", "b"}
 	fmt.Printf("t3 = '%+v'\n", t3)
 
