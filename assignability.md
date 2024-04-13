@@ -50,7 +50,11 @@ func main() {
 	var a T1 = "ABC"
 	var b T2 = "DEF"
 	fmt.Printf("a: [%T, %v], b: [%T, %v]\n", a, a, b, b)
+	// a: [main.T1, ABC], b: [main.T2, DEF]
+
 	a = b // cannot use b (variable of type T2) as T1 value in assignment
+
+	a = T1(b) // works
 ```
 
 * V and T are channel types with identical element types, V is a bidirectional channel, and at least one of V or T is not a named type.
