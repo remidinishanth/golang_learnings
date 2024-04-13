@@ -38,6 +38,7 @@ func main() {
 	var z Bar
 
 	y = z // cannot use z (variable of type Bar) as Foo value in assignment
+	y = Foo(z) // works
 ```
 
 Here `x` and `x2` have the same type, while `y` and `z` do not.
