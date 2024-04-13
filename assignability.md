@@ -27,17 +27,21 @@ type T4 T3
 
 func main() {
 	var t3 T3 = []T1{"a", "b"}
-	fmt.Printf("t3='%+v'\n", t3)
+	fmt.Printf("t3 = '%+v'\n", t3)
 
 	// var t4 T4 = []string{}
 	// cannot use []string literal (type []string) as type T4 in assignment
 
 	var t4 T4 = T4(t3)
-	fmt.Printf("t4='%+v'\n", t4)
+	fmt.Printf("t4 = '%+v'\n", t4)
 
 	t4 = []T1{T1("c"), T1("d")}
-	fmt.Printf("t4='%+v'\n", t4)
+	fmt.Printf("t4 = '%+v'\n", t4)
 }
+
+// t3 = '[a b]'
+// t4 = '[a b]'
+// t4 = '[c d]'
 ```
 
 * V and T are channel types with identical element types, V is a bidirectional channel, and at least one of V or T is not a named type.
