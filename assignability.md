@@ -140,6 +140,11 @@ If a type `T` (whether it’s a concrete type, or itself an interface) implement
 
 In that sense, `*bytes.Buffer` is a subtype of `io.ReadWriter`, which is a subtype of `io.Reader`. And every type is a subtype of `interface{}`.
 
+
+Say, we have a `func() *bytes.Buffer`, We could also use this like a `func() io.Reader` - we just reinterpret the return value as an `io.Reader`.
+
+So, function return values could preserve the direction of subtyping relationships: If `A` is a subtype of `B`, `func() A` could be a subtype of `func() B`. This is called **covariance**.
+
 ```go
 func F() io.Reader {
 	return new(bytes.Buffer)
