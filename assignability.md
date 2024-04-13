@@ -16,7 +16,7 @@ func main() {
 
 * V and T have identical underlying types but are not type parameters and at least one of V or T is not a named type. Ref: https://stackoverflow.com/questions/29332879/golang-underlying-types
 
-`var x struct{ I int }` x is *unnamed*
+`var x struct{ I int }` x is **unnamed**
 
 ```go
 type T1 string
