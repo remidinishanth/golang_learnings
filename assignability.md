@@ -14,7 +14,9 @@ func main() {
 // a: [int, 3], b: [int, 3]
 ```
 
-* V and T have identical underlying types but are not type parameters and at least one of V or T is not a named type. Ref: https://stackoverflow.com/questions/29332879/golang-underlying-types
+* V and T have identical underlying types but are not type parameters and at least one of V or T is not a named type.
+ - Ref: https://stackoverflow.com/questions/29332879/golang-underlying-types
+ - Ref: https://stackoverflow.com/questions/32983546/named-and-unnamed-types
 
 `var x struct{ I int }` x is **unnamed**
 
