@@ -87,13 +87,6 @@ Values of bidirectional channel type `chan T` can be implicitly converted to bot
 Values of send-only type `chan<- T` can't be converted to receive-only type `<-chan T`, and vice versa. Note that the `<-` signs in channel type literals are modifiers.
 
 ```go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
 func main() {
 	c := make(chan int) // an unbuffered channel
 	go func(ch chan<- int, x int) {
