@@ -38,7 +38,7 @@ func main() {
 	y = z // cannot use z (variable of type Bar) as Foo value in assignment
 ```
 
-Here x and x2 have the same type, while y and z do not.
+Here `x` and `x2` have the same type, while `y` and `z` do not.
 
 ```go
 type T1 string
