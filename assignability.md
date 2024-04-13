@@ -15,8 +15,8 @@ func main() {
 ```
 
 ### V and T have identical underlying types but are not type parameters and at least one of V or T is not a named type.
- - Ref: https://stackoverflow.com/questions/29332879/golang-underlying-types
- - Ref: https://stackoverflow.com/questions/32983546/named-and-unnamed-types
+- Ref: https://stackoverflow.com/questions/29332879/golang-underlying-types
+- Ref: https://stackoverflow.com/questions/32983546/named-and-unnamed-types
 
 `var x struct{ I int }` x is **unnamed**
 
@@ -78,11 +78,15 @@ func main() {
 ### V and T are channel types with identical element types, V is a bidirectional channel, and at least one of V or T is not a named type.
 
 Channel types can be bi-directional or single-directional. Assume `T` is an arbitrary type,
-chan T denotes a bidirectional channel type. Compilers allow both receiving values from and sending values to bidirectional channels.
-chan<- T denotes a send-only channel type. Compilers don't allow receiving values from send-only channels.
-<-chan T denotes a receive-only channel type. Compilers don't allow sending values to receive-only channels.
+* `chan T` denotes a bidirectional channel type. Compilers allow both receiving values from and sending values to bidirectional channels.
+* `chan<- T` denotes a send-only channel type. Compilers don't allow receiving values from send-only channels.
+* `<-chan T` denotes a receive-only channel type. Compilers don't allow sending values to receive-only channels.
+
+Values of bidirectional channel type `chan T` can be implicitly converted to both send-only type `chan<- T` and receive-only type `<-chan T`, but not vice versa (even if explicitly). 
+
+Values of send-only type `chan<- T` can't be converted to receive-only type `<-chan T`, and vice versa. Note that the `<-` signs in channel type literals are modifiers.
   
-* T is an interface type, but not a type parameter, and x implements T.
+### T is an interface type, but not a type parameter, and x implements T.
 
 * x is the predeclared identifier nil and T is a pointer, function, slice, map, channel, or interface type, but not a type parameter.
 x is an untyped constant representable by a value of type T.
