@@ -82,8 +82,10 @@ func main() {
 ```
 
 * V and T are channel types with identical element types, V is a bidirectional channel, and at least one of V or T is not a named type.
-T is an interface type, but not a type parameter, and x implements T.
-x is the predeclared identifier nil and T is a pointer, function, slice, map, channel, or interface type, but not a type parameter.
+  
+* T is an interface type, but not a type parameter, and x implements T.
+
+* x is the predeclared identifier nil and T is a pointer, function, slice, map, channel, or interface type, but not a type parameter.
 x is an untyped constant representable by a value of type T.
 Additionally, if x's type V or T are type parameters, x is assignable to a variable of type T if one of the following conditions applies:
 
