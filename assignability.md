@@ -116,6 +116,8 @@ func main() {
 	fmt.Println("bye")
 }
 ```
+
+Ref: https://go101.org/article/channel.html
   
 ### T is an interface type, but not a type parameter, and x implements T.
 
