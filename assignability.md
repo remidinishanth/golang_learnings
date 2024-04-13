@@ -19,6 +19,28 @@ func main() {
 `var x struct{ I int }` x is **unnamed**
 
 ```go
+	var x struct{ I int }
+
+	type Foo struct{ I int }
+	var y Foo
+
+	fmt.Println(x, y)
+
+	x = y // works
+	y = x // works
+
+	var x2 struct{ I int }
+	x = x2 // works
+
+	type Bar struct{ I int }
+	var z Bar
+
+	y = z // cannot use z (variable of type Bar) as Foo value in assignment
+```
+
+Here x and x2 have the same type, while y and z do not.
+
+```go
 type T1 string
 type T2 T1
 type T3 []T1
