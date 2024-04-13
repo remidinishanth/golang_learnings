@@ -92,6 +92,7 @@ func main() {
 	go func(ch chan<- int, x int) {
 		time.Sleep(time.Second)
 		// <-ch    // fails to compile
+		// invalid operation: cannot receive from send-only channel ch (variable of type chan<- int)
 
 		// Send the value and block until the result is received.
 		ch <- x * x // 9 is sent
