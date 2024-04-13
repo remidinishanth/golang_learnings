@@ -136,6 +136,10 @@ Ref: https://go101.org/article/channel.html
 
 https://blog.merovius.de/posts/2018-06-03-why-doesnt-go-have-variance-in/
 
+If a type `T` (whether it’s a concrete type, or itself an interface) implements an interface `I`, then `T` can be viewed as a subtype of `I`. 
+
+In that sense, `*bytes.Buffer` is a subtype of `io.ReadWriter`, which is a subtype of `io.Reader`. And every type is a subtype of `interface{}`.
+
 ```go
 func F() io.Reader {
 	return new(bytes.Buffer)
