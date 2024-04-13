@@ -85,6 +85,43 @@ Channel types can be bi-directional or single-directional. Assume `T` is an arbi
 Values of bidirectional channel type `chan T` can be implicitly converted to both send-only type `chan<- T` and receive-only type `<-chan T`, but not vice versa (even if explicitly). 
 
 Values of send-only type `chan<- T` can't be converted to receive-only type `<-chan T`, and vice versa. Note that the `<-` signs in channel type literals are modifiers.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	c := make(chan int) // an unbuffered channel
+	go func(ch chan<- int, x int) {
+		time.Sleep(time.Second)
+		// <-ch    // fails to compile
+
+		// Send the value and block until the result is received.
+		ch <- x * x // 9 is sent
+	}(c, 3)
+
+	done := make(chan struct{})
+	go func(ch <-chan int) {
+		// Block until 9 is received.
+		n := <-ch
+		fmt.Println(n) // 9
+
+		// ch <- 123   // fails to compile
+
+		time.Sleep(time.Second)
+		done <- struct{}{}
+	}(c)
+
+	// Block here until a value is received by
+	// the channel "done".
+	<-done
+	fmt.Println("bye")
+}
+```
   
 ### T is an interface type, but not a type parameter, and x implements T.
 
