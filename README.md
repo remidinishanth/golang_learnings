@@ -205,6 +205,13 @@ Therefore, we are converting the string to `rune` array and then finding the arr
     println("Output of len(str) is : ", len(str)) // 4
 ```
 
+#### map
+
+* A map holds a set of key/value pairs and provides constant-time operations to store, retrieve,
+or test for an item in the set. 
+* The key may be of any type whose values can compared with `==`,
+strings being the most common example; the value may be of any type at all.
+
 #### Type
 
 A type determines a set of values together with operations and methods specific to those values.
