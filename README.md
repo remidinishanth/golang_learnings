@@ -66,20 +66,20 @@ In Go, a name is **exported** if it begins with a capital letter. For example, `
 #### Variable declaration
 
 **Within a function**, an alternate form called a short variable declaration may be used to declare and initialize local variables.
-Cannot be done outside of functions.
+It cannot be done outside of functions.
 
 ```
 name := expression
 ```
 
 If some of them were already declared in the same lexical block, 
-then the short var iable declaration acts like an assignment to those variables.
+Then, the short variable declaration acts as an assignment to those variables.
 
 #### Arrays
 
 * The type `[n]T` is an array of `n` values of type `T`.
 * `var x [5]int = [5]int{1, 2, 3, 4, 5}` Array pre-defined with values
-  * Length of literal must be length of array
+  * Length of literal must be the length of the array
   * `...` for size can also be used `x := [...]int{1, 2, 3, 4, 5}`, when using `[...]` size will be deduced from `{ ... }`
 
 Iterating
