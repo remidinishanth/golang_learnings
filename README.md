@@ -106,6 +106,7 @@ Pointer aliasing is useful because it allows us to access a variable without usi
 #### new
 
 Another way to create a variable is to use the built-in function `new`. 
+
 The expression `new(T)` creates an unnamed variable of type `T`, initializes it to the zero value of `T`, and returns its address, which is a value of type `*T`.
 
 ```go
@@ -122,6 +123,39 @@ except that there’s no need to invent (and declare) a dummy name, and we can u
 Thus new is only a syntactic convenience.
 
 ![image](https://github.com/user-attachments/assets/e65450d9-79ca-4054-97aa-2a5498d20baf)
+
+`new` takes a type as an argument, allocates enough memory to fit a value of that type, and returns a pointer to it.
+
+```go
+func one(xPtr *int) {
+  *xPtr = 1
+}
+func main() {
+  xPtr := new(int)
+  one(xPtr)
+  fmt.Println(*xPtr) // x is 1
+}
+```
+
+`new` with struct
+
+```go
+type Circle struct {
+	x, y, r float64
+}
+
+func main() {
+	var x Circle
+	fmt.Println(x)
+	c := new(Circle)
+	fmt.Println(c)
+
+}
+
+// Output:
+// {0 0 0}
+// &{0 0 0}
+```
 
 ---
 
@@ -479,40 +513,11 @@ Ref: https://go.dev/doc/code
 
 By convention, one-method interfaces are named by the method name plus an `-er` suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
 
-### new
+---
 
-`new` takes a type as an argument, allocates enough memory to fit a value of that type and returns a pointer to it.
+![image](https://github.com/user-attachments/assets/c8160cb4-e7f2-403a-9c22-165c481224f0)
 
-```go
-func one(xPtr *int) {
-  *xPtr = 1
-}
-func main() {
-  xPtr := new(int)
-  one(xPtr)
-  fmt.Println(*xPtr) // x is 1
-}
-```
-
-`new` with struct
-
-```go
-type Circle struct {
-	x, y, r float64
-}
-
-func main() {
-	var x Circle
-	fmt.Println(x)
-	c := new(Circle)
-	fmt.Println(c)
-
-}
-
-// Output:
-// {0 0 0}
-// &{0 0 0}
-```
+---
 
 ### Struct tags in go
 
