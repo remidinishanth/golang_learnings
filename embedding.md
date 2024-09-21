@@ -6,8 +6,6 @@ Refer: https://eli.thegreenplace.net/2020/embedding-in-go-part-1-structs-in-stru
 Such a pattern is even used in the Golang sort package https://go.dev/src/sort/sort.go for reverse
 
 ```go
-// You can edit this code!
-// Click here and start typing.
 package main
 
 import "fmt"
