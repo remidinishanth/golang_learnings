@@ -59,9 +59,13 @@ Three subdirectories
 
 Also refer https://github.com/golang-standards/project-layout
 
+---
+
 ### Basics
 
 In Go, a name is **exported** if it begins with a capital letter. For example, `Pizza` is an exported name, as is `Pi`, which is exported from the math package.
+
+---
 
 #### Variable declaration
 
@@ -74,6 +78,12 @@ name := expression
 
 If some of them were already declared in the same lexical block, 
 Then, the short variable declaration acts as an assignment to those variables.
+
+
+A short variable declaration acts like an assignment only to variables 
+already declared in the same lexical block; declarations in an outer block are ignored.
+
+---
 
 #### Arrays
 
@@ -93,6 +103,8 @@ for i, v := range x {
 ```
 
 `range` allows to iterate through array, pointer to array, slice, string, map or values received on a channel. Read more at https://medium.com/golangspec/for-statement-and-its-all-faces-in-golang-abcbdc011f81
+
+---
 
 #### Slice
 
@@ -123,6 +135,8 @@ Slice literals
 []bool{true, true, false}
 ```
 
+---
+
 #### Variable Slices
 
 * Create a slice(and array) using `make()`
@@ -143,6 +157,8 @@ a = append(a, a2...)
 ```
 
 A good rule of thumb when declaring variables is to use the key- word var when declaring variables that will be initialized to their zero value, and to use the short variable declaration operator when you’re providing extra initialization or making a function call. Ref: Go in Action
+
+---
 
 #### Byte Slices and Strings
 
@@ -217,6 +233,8 @@ Therefore, we are converting the string to `rune` array and then finding the arr
     println("Output of len(str) is : ", len(str)) // 4
 ```
 
+---
+
 #### map
 
 * A map holds a set of key/value pairs and provides constant-time operations to store, retrieve,
@@ -229,6 +247,8 @@ run to another. This design is intentional since it prevents programs from relyi
 Note:
 * A map is a reference to the data structure created by make. Whenamap is passed to a function, the function receives a copy of the reference, so any changes the called function makes to
 the underlying data structure will be visible through the caller’s map reference too.
+
+---
 
 #### Type
 
@@ -243,6 +263,8 @@ A method call `x.m()` is valid if the method set of (the type of) `x` contains `
 Ref: https://go.dev/ref/spec#Calls
 
 Also checkout https://go.dev/tour/methods/1
+
+---
 
 #### Struct
 
