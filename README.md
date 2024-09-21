@@ -63,6 +63,18 @@ Also refer https://github.com/golang-standards/project-layout
 
 In Go, a name is **exported** if it begins with a capital letter. For example, `Pizza` is an exported name, as is `Pi`, which is exported from the math package.
 
+#### Variable declaration
+
+**Within a function**, an alternate form called a short variable declaration may be used to declare and initialize local variables.
+Cannot be done outside of functions.
+
+```
+name := expression
+```
+
+If some of them were already declared in the same lexical block, 
+then the short var iable declaration acts like an assignment to those variables.
+
 #### Arrays
 
 * The type `[n]T` is an array of `n` values of type `T`.
