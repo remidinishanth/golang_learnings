@@ -118,6 +118,11 @@ fmt.Println(*p) // "2"
 A variable created with new is no different from an ordinary local variable whose address is taken, 
 except that there’s no need to invent (and declare) a dummy name, and we can use `new(T)` in an expression.
 
+
+Thus new is only a syntactic convenience.
+
+![image](https://github.com/user-attachments/assets/e65450d9-79ca-4054-97aa-2a5498d20baf)
+
 ---
 
 #### Arrays
