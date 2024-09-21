@@ -160,6 +160,9 @@ func main() {
 }
 ```
 
+> Each time around the loop, the string s gets completely new contents.
+> The += statement makes a new string by concatenating the old string , a space character, and the next argument, then assigns the new string to s.
+> The old contents of s are no longer in use, so they will be garbage-collected in due course.
 
 `%s` converts the byte slice to a string
 
