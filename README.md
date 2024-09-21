@@ -85,6 +85,26 @@ already declared in the same lexical block; declarations in an outer block are i
 
 ---
 
+#### Pointers
+
+A pointer value is the address of a variable. 
+A pointer is thus the location at which a value is stored. Not every value has an address, but every variable does.
+
+
+
+Variables are sometimes described as addressable values. 
+Expressions that denote variables are the only expressions to which the address-of operator `&` may be applied.
+
+It is perfectly safe for a function to return the address of a local variable.
+
+Each time we take the address of a variable or copy a pointer, we create new aliases or ways to identify the same variable.
+
+Pointer aliasing is useful because it allows us to access a variable without using its name, but this is a double-edged sword: to find all the statements that access a variable, we have to know all its aliases. It’s not just pointers that create aliases; aliasing also occurs when we copy values of other reference types like slices, maps, and channels, and even structs, arrays, and interfaces that contain these types.
+
+
+
+---
+
 #### Arrays
 
 * The type `[n]T` is an array of `n` values of type `T`.
