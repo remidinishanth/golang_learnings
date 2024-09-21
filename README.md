@@ -214,6 +214,10 @@ strings being the most common example; the value may be of any type at all.
 * The order of map iteration is not specified, but in practice it is random, varying from one
 run to another. This design is intentional since it prevents programs from relying on any particular ordering where none is guaranteed.
 
+Note:
+* A map is a reference to the data structure created by make. Whenamap is passed to a function, the function receives a copy of the reference, so any changes the called function makes to
+the underlying data structure will be visible through the caller’s map reference too.
+
 #### Type
 
 A type determines a set of values together with operations and methods specific to those values.
