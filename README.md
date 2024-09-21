@@ -101,7 +101,22 @@ Each time we take the address of a variable or copy a pointer, we create new ali
 
 Pointer aliasing is useful because it allows us to access a variable without using its name, but this is a double-edged sword: to find all the statements that access a variable, we have to know all its aliases. It’s not just pointers that create aliases; aliasing also occurs when we copy values of other reference types like slices, maps, and channels, and even structs, arrays, and interfaces that contain these types.
 
+---
 
+#### new
+
+Another way to create a variable is to use the built-in function `new`. 
+The expression `new(T)` creates an unnamed variable of type `T`, initializes it to the zero value of `T`, and returns its address, which is a value of type `*T`.
+
+```go
+p := new(int) // p, of type *int, points to an unnamed int variable
+fmt.Println(*p) // "0"
+*p = 2 // sets the unnamed int to 2
+fmt.Println(*p) // "2"
+```
+
+A variable created with new is no different from an ordinary local variable whose address is taken, 
+except that there’s no need to invent (and declare) a dummy name, and we can use `new(T)` in an expression.
 
 ---
 
