@@ -148,6 +148,19 @@ bs := []byte{71, 111}
 fmt.Printf("%s", bs) // Output: Go
 ```
 
+The following example of `echo` function is a quadratic process that could be costly if the number of arguments is large, this is because strings are read-only.
+```go
+func main() {
+  s, sep := "", ""
+  for _, arg := range os.Args[1:] {
+    s += sep + arg
+    sep = " "
+  }
+  fmt.Println(s)
+}
+```
+
+
 `%s` converts the byte slice to a string
 
 ```go
