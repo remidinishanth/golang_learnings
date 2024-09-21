@@ -211,6 +211,8 @@ Therefore, we are converting the string to `rune` array and then finding the arr
 or test for an item in the set. 
 * The key may be of any type whose values can compared with `==`,
 strings being the most common example; the value may be of any type at all.
+* The order of map iteration is not specified, but in practice it is random, varying from one
+run to another. This design is intentional since it prevents programs from relying on any particular ordering where none is guaranteed.
 
 #### Type
 
