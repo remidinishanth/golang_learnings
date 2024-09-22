@@ -14,3 +14,8 @@ side`
 Reflection
 https://research.swtch.com/interfaces
 https://halfrost.com/go_reflection/
+
+
+Todo:
+* https://groups.google.com/g/golang-nuts/c/vPHiJwxVN98
+* https://stackoverflow.com/questions/67830065/is-an-interface-a-pointer/79008800#79008800
