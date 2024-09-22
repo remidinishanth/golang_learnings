@@ -278,5 +278,9 @@ When a function accepts an interface as a parameter, passing a value to that fun
 
 ![image](https://github.com/user-attachments/assets/b11af365-d1fd-4d8b-9da0-20cca8b38cd6)
 
+#### reflect.Method - Examining the itab/Method-Set
+![image](https://github.com/user-attachments/assets/2481de20-62d8-4fc1-9d86-c7cff76a329e)
+
+![image](https://github.com/user-attachments/assets/91f960e1-c65c-458e-8847-3aa9a4eb043a)
 
 Ref: https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
