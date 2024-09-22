@@ -55,12 +55,27 @@ The typical use is to take a value with static type `interface{}` and extract it
 A call to `ValueOf` returns a `Value` representing the run-time data. `Zero` takes a `Type` and returns a `Value` representing a zero value for that type. 
 
 
+### reflect.Type
+
+* A `Type` represents a Go type.
+* It is an interface with many methods for discriminating among types and inspecting their components, like the fields of a struct or the parameters of a function.
+* The sole implementation of `reflect.Type` is the type descriptor , the same entity that identifies the dynamic type of an interface value.
+
+
+The `reflect.TypeOf` function accepts any `interface{}` and returns its dynamic type as a `reflect.Type`:
+
 ```go
 t := reflect.TypeOf(3) // a reflect.Type
 fmt.Println(t.String()) // "int"
 fmt.Println(t) // "int"
 ```
 
+* The `TypeOf(3)` call assigns the value `3` to the `interface{}` parameter.
+* An assignment from a concrete value to an interface type performs an implicit interface conversion, which creates an interface value consisting of two components:
+  - its dynamic type is the operand’s type (int), and
+  - its dynamic value is the operand’s value (3).
+
+Because `reflect.TypeOf` returns an interface value’s dynamic type, it always returns a concrete type.
 
 ## APIs of Reflection
 
