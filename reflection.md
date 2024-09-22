@@ -1,4 +1,8 @@
 ## Reflection
+
+> In computer science, reflective programming or reflection is the ability of a process to examine,
+> introspect, and modify its own structure and behavior
+
 * Go provides a mechanism to update variables, inspect their values at runtime, call their methods,
 and apply the operations intrinsic to their representation without knowing their types at compile time. 
 * This mechanism is called reflection.
