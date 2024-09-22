@@ -275,4 +275,8 @@ We can clearly see the three parts of the interface in that diagram: the `_type`
 
 When a function accepts an interface as a parameter, passing a value to that function packs the value, method set, and type into the interface.
 
-https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
+
+![image](https://github.com/user-attachments/assets/b11af365-d1fd-4d8b-9da0-20cca8b38cd6)
+
+
+Ref: https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
