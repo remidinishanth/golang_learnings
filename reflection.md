@@ -231,4 +231,31 @@ Alternatively, we can update the variable referred to by an addressable reflect.
 ```go
 d.Set(reflect.ValueOf(4))
 fmt.Println(x) // "4"
+
+d.Set(reflect.ValueOf(int64(5))) // panic: int64 is not assignable to int
+
+
+x := 2
+b := reflect.ValueOf(x)
+b.Set(reflect.ValueOf(3)) // panic: Set using unaddressable value
+```
+
+
+More details
+
+```
+x := 1
+rx := reflect.ValueOf(&x).Elem()
+rx.SetInt(2) // OK, x = 2
+rx.Set(reflect.ValueOf(3)) // OK, x = 3
+rx.SetString("hello") // panic: string is not assignable to int
+rx.Set(reflect.ValueOf("hello")) // panic: string is not assignable to int
+
+
+var y interface{}
+ry := reflect.ValueOf(&y).Elem()
+ry.SetInt(2) // panic: SetInt called on interface Value
+ry.Set(reflect.ValueOf(3)) // OK, y = int(3)
+ry.SetString("hello") // panic: SetString called on interface Value
+ry.Set(reflect.ValueOf("hello")) // OK, y = "hello"
 ```
