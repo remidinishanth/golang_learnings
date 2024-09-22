@@ -133,6 +133,22 @@ fmt.Printf("%v\n", v)  // "3"
 fmt.Println(v.String()) // NOTE: "<int Value>"
 ```
 
+Calling the Type method on a Value returns its type as a reflect.Type:
+
+```go
+t := v.Type() // a reflect.Type
+fmt.Println(t.String()) // "int"
+```
+
+The inverse operation to reflect.ValueOf is the reflect.Value.Interface method. It returns an interface{} holding the same concrete value as the reflect.Value:
+
+```go
+v := reflect.ValueOf(3) // a reflect.Value
+x := v.Interface()      // an interface{}
+i := x.(int)           // an int
+fmt.Printf("%d\n", i)  // "3"
+```
+
 ## APIs of Reflection
 
 Reflection acts on three important reflection properties that every Golang object has: `Type`, `Kind`, and `Value`. ‘Kind’ can be one of `struct`, `int`, `string`, `slice`, `map`, or another Golang primitives.
