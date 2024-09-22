@@ -194,3 +194,21 @@ b := reflect.ValueOf(x)  // 2        int     (no)
 c := reflect.ValueOf(&x) // &x       *int    (no)
 d := c.Elem()            // 2        int     (yes, x)
 ```
+
+
+* The value within a is not addressable. It is merely a copy of the integer 2.
+* The same is true of b.
+* The value within c is also non-addressable, being a copy of the pointer value &x. In fact, no reflect.Value returned by reflect.ValueOf(x) is addressable.
+* But d, derived from c by dereferencing the pointer within it, refers to a variable and is thus addressable.
+
+
+We can use this approach, calling reflect.ValueOf(&x).Elem(), to obtain an addressable Value for any variable x.
+
+We can ask a reflect.Value whether it is addressable through its CanAddr method:
+
+```go
+fmt.Println(a.CanAddr()) // "false"
+fmt.Println(b.CanAddr()) // "false"
+fmt.Println(c.CanAddr()) // "false"
+fmt.Println(d.CanAddr()) // "true"
+```
