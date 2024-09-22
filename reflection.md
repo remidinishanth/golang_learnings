@@ -133,14 +133,14 @@ fmt.Printf("%v\n", v)  // "3"
 fmt.Println(v.String()) // NOTE: "<int Value>"
 ```
 
-Calling the Type method on a Value returns its type as a reflect.Type:
+Calling the `Type` method on a `Value` returns its type as a `reflect.Type`:
 
 ```go
 t := v.Type() // a reflect.Type
 fmt.Println(t.String()) // "int"
 ```
 
-The inverse operation to reflect.ValueOf is the reflect.Value.Interface method. It returns an interface{} holding the same concrete value as the reflect.Value:
+The inverse operation to `reflect.ValueOf` is the `reflect.Value.Interface` method. It returns an `interface{}` holding the same concrete value as the `reflect.Value`:
 
 ```go
 v := reflect.ValueOf(3) // a reflect.Value
