@@ -196,19 +196,39 @@ d := c.Elem()            // 2        int     (yes, x)
 ```
 
 
-* The value within a is not addressable. It is merely a copy of the integer 2.
-* The same is true of b.
-* The value within c is also non-addressable, being a copy of the pointer value &x. In fact, no reflect.Value returned by reflect.ValueOf(x) is addressable.
-* But d, derived from c by dereferencing the pointer within it, refers to a variable and is thus addressable.
+* The value within a is not addressable. It is merely a copy of the integer `2`.
+* The same is true of `b`.
+* The value within `c` is also non-addressable, being a copy of the pointer value `&x`. In fact, no `reflect.Value` returned by `reflect.ValueOf(x)` is addressable.
+* But `d`, derived from `c` by dereferencing the pointer within it, refers to a variable and is thus addressable.
 
+We can use this approach, calling `reflect.ValueOf(&x).Elem()`, to obtain an addressable Value for any variable `x`.
 
-We can use this approach, calling reflect.ValueOf(&x).Elem(), to obtain an addressable Value for any variable x.
-
-We can ask a reflect.Value whether it is addressable through its CanAddr method:
+We can ask a `reflect.Value` whether it is addressable through its `CanAddr` method:
 
 ```go
 fmt.Println(a.CanAddr()) // "false"
 fmt.Println(b.CanAddr()) // "false"
 fmt.Println(c.CanAddr()) // "false"
 fmt.Println(d.CanAddr()) // "true"
+```
+
+
+To recover the variable from an addressable `reflect.Value` requires three steps. 
+* First, we call `Addr()`, which returns a Value holding a pointer to the variable.
+* Next, we call `Interface()` on this Value, which returns an interface{} value containing the pointer.
+* Finally, if we know the type of the variable, we can use a type assertion to retrieve the contents of the interface as an ordinary pointer. We can then update the variable through the pointer:
+
+```go
+x := 2
+d := reflect.ValueOf(&x).Elem() // d refers to the variable x
+px := d.Addr().Interface().(*int) // px := &x
+*px = 3 // x = 3
+fmt.Println(x) // "3"
+```
+
+Alternatively, we can update the variable referred to by an addressable reflect.Value directly, without using a pointer, by calling the reflect.Value.Set method:
+
+```go
+d.Set(reflect.ValueOf(4))
+fmt.Println(x) // "4"
 ```
