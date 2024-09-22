@@ -259,3 +259,18 @@ ry.Set(reflect.ValueOf(3)) // OK, y = int(3)
 ry.SetString("hello") // panic: SetString called on interface Value
 ry.Set(reflect.ValueOf("hello")) // OK, y = "hello"
 ```
+
+
+## Interface and Reflection
+
+* Interfaces are one of the fundamental tools for abstraction in Go.
+* Interfaces store type information when assigned a value.
+* Reflection is a method of examining type and value information at runtime.
+
+An interface encodes three things: a value, a method set, and the type of the stored value.
+
+![image](https://github.com/user-attachments/assets/642d1ec5-51a9-469a-b3a3-d9d1cd6429d2)
+
+We can clearly see the three parts of the interface in that diagram: the `_type` is type information, `*data` is a pointer to the actual value, and the `itab` encodes the method set.
+
+https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
