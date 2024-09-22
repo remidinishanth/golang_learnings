@@ -178,3 +178,19 @@ if rType.Kind() == reflect.Struct {
 ```
 
 Ref: https://www.nutanix.dev/2022/04/22/golang-the-art-of-reflection/
+
+
+## Setting values using reflection
+
+* Recall that some Go expressions, like `x`, `x.f[1]`, and `*p`, denote variables, while others, like `x + 1` and `f(2)`, do not. 
+* A variable is an addressable storage location that contains a value, and its value may be updated through that address.
+
+A similar distinction applies to `reflect.Values`. Some are addressable; others are not. Consider the following declarations:
+
+```go
+x := 2              // value type variable?
+a := reflect.ValueOf(2)  // 2 int (no)
+b := reflect.ValueOf(x)  // 2 int (no)
+c := reflect.ValueOf(&x) // &x *int (no)
+d := c.Elem()            // 2 int (yes, x)
+```
