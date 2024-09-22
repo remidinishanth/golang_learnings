@@ -59,7 +59,7 @@ A call to `ValueOf` returns a `Value` representing the run-time data. `Zero` tak
 
 * A `Type` represents a Go type.
 * It is an interface with many methods for discriminating among types and inspecting their components, like the fields of a struct or the parameters of a function.
-* The sole implementation of `reflect.Type` is the type descriptor , the same entity that identifies the dynamic type of an interface value.
+* The sole implementation of `reflect.Type` is the type descriptor, the same entity that identifies the dynamic type of an interface value.
 
 
 The `reflect.TypeOf` function accepts any `interface{}` and returns its dynamic type as a `reflect.Type`:
@@ -69,6 +69,42 @@ t := reflect.TypeOf(3) // a reflect.Type
 fmt.Println(t.String()) // "int"
 fmt.Println(t) // "int"
 ```
+
+Conceptually, a value of an interface type, or interface value, has two components: a concrete type and a value of that type. These are called the interface’s dynamic type and dynamic value.
+
+![image](https://github.com/user-attachments/assets/aae7a52b-f9bd-4c50-892e-021929eef0c2)
+
+An interface value is described as nil or non-nil based on its dynamic type, so this is a nil interface value. You can test whether an interface value is nil using w == nil or w != nil.
+
+![image](https://github.com/user-attachments/assets/f7c8017c-a4ff-4483-b6b8-0007ac0d784e)
+
+```go
+const debug = true
+
+func main() {
+    var buf *bytes.Buffer
+    if debug {
+        buf = new(bytes.Buffer) // enable collection of output
+    }
+    f(buf) // NOTE: subtly incorrect!
+    if debug {
+        // ...use buf...
+    }
+}
+
+// If out is non-nil, output will be written to it.
+func f(out io.Writer) {
+    // ...do something...
+    if out != nil {
+        out.Write([]byte("done!\n"))
+    }
+}
+```
+
+When debug is false, the program would panic because `buf` is `nil`
+
+![image](https://github.com/user-attachments/assets/cef4f70c-7614-4321-9f13-cd4c2130d56f)
+
 
 * The `TypeOf(3)` call assigns the value `3` to the `interface{}` parameter.
 * An assignment from a concrete value to an interface type performs an implicit interface conversion, which creates an interface value consisting of two components:
