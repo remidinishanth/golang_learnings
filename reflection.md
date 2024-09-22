@@ -60,3 +60,34 @@ t := reflect.TypeOf(3) // a reflect.Type
 fmt.Println(t.String()) // "int"
 fmt.Println(t) // "int"
 ```
+
+
+## APIs of Reflection
+
+Reflection acts on three important reflection properties that every Golang object has: `Type`, `Kind`, and `Value`. ‘Kind’ can be one of `struct`, `int`, `string`, `slice`, `map`, or another Golang primitives.
+
+The reflect package provides the following functions to get these properties:
+
+```go
+// Get the reflection value of an object.
+rValue := reflect.ValueOf(input)
+
+// Get the reflection kind of an object.
+rKind := rValue.Kind()
+
+// Get the reflection type of an object (two options).
+rType := reflect.TypeOf(input)
+rType := rValue.Type()
+
+// Get the underlying object of a pointer object.
+underlyingValue := rValue.Elem()
+
+// Traverse through all the fields of a struct.
+if rType.Kind() == reflect.Struct {
+	for i := 0; i < rType.NumField(); i++ {
+		fieldValue := rValue.Field(i)
+	}
+}
+```
+
+Ref: https://www.nutanix.dev/2022/04/22/golang-the-art-of-reflection/
