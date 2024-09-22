@@ -273,4 +273,6 @@ An interface encodes three things: a value, a method set, and the type of the st
 
 We can clearly see the three parts of the interface in that diagram: the `_type` is type information, `*data` is a pointer to the actual value, and the `itab` encodes the method set.
 
+When a function accepts an interface as a parameter, passing a value to that function packs the value, method set, and type into the interface.
+
 https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
