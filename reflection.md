@@ -120,6 +120,19 @@ var w io.Writer = os.Stdout
 fmt.Println(reflect.TypeOf(w)) // "*os.File"
 ```
 
+### reflect.Value
+
+* The other important type in the reflect package is `Value`. A `reflect.Value` can hold a value of any type.
+* The `reflect.ValueOf` function accepts any `interface{}` and returns a `reflect.Value` containing the interface’s dynamic value.
+* As with reflect.TypeOf, the results of `reflect.ValueOf` are always concrete, but a reflect.Value can hold interface values too.
+
+```go
+v := reflect.ValueOf(3) // a reflect.Value
+fmt.Println(v)          // "3"
+fmt.Printf("%v\n", v)  // "3"
+fmt.Println(v.String()) // NOTE: "<int Value>"
+```
+
 ## APIs of Reflection
 
 Reflection acts on three important reflection properties that every Golang object has: `Type`, `Kind`, and `Value`. ‘Kind’ can be one of `struct`, `int`, `string`, `slice`, `map`, or another Golang primitives.
