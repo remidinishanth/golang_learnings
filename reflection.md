@@ -61,15 +61,6 @@ A call to `ValueOf` returns a `Value` representing the run-time data. `Zero` tak
 * It is an interface with many methods for discriminating among types and inspecting their components, like the fields of a struct or the parameters of a function.
 * The sole implementation of `reflect.Type` is the type descriptor, the same entity that identifies the dynamic type of an interface value.
 
-
-The `reflect.TypeOf` function accepts any `interface{}` and returns its dynamic type as a `reflect.Type`:
-
-```go
-t := reflect.TypeOf(3) // a reflect.Type
-fmt.Println(t.String()) // "int"
-fmt.Println(t) // "int"
-```
-
 Conceptually, a value of an interface type, or interface value, has two components: a concrete type and a value of that type. These are called the interface’s dynamic type and dynamic value.
 
 ![image](https://github.com/user-attachments/assets/aae7a52b-f9bd-4c50-892e-021929eef0c2)
@@ -106,12 +97,28 @@ When debug is false, the program would panic because `buf` is `nil`
 ![image](https://github.com/user-attachments/assets/cef4f70c-7614-4321-9f13-cd4c2130d56f)
 
 
+
+The `reflect.TypeOf` function accepts any `interface{}` and returns its dynamic type as a `reflect.Type`:
+
+```go
+t := reflect.TypeOf(3) // a reflect.Type
+fmt.Println(t.String()) // "int"
+fmt.Println(t) // "int"
+```
+
 * The `TypeOf(3)` call assigns the value `3` to the `interface{}` parameter.
 * An assignment from a concrete value to an interface type performs an implicit interface conversion, which creates an interface value consisting of two components:
   - its dynamic type is the operand’s type (int), and
   - its dynamic value is the operand’s value (3).
 
 Because `reflect.TypeOf` returns an interface value’s dynamic type, it always returns a concrete type.
+
+The code below prints `*os.File`, not `io.Writer`. Later, we will see that `reflect.Type` is capable of representing interface types too.
+
+```go
+var w io.Writer = os.Stdout
+fmt.Println(reflect.TypeOf(w)) // "*os.File"
+```
 
 ## APIs of Reflection
 
