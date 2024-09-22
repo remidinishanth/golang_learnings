@@ -286,8 +286,15 @@ When a function accepts an interface as a parameter, passing a value to that fun
 ![image](https://github.com/user-attachments/assets/2481de20-62d8-4fc1-9d86-c7cff76a329e)
 
 
-Todo: Checkout https://halfrost-com.translate.goog/go_reflection/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp and https://halfrost.com/go_reflection/
-
 ![image](https://github.com/user-attachments/assets/91f960e1-c65c-458e-8847-3aa9a4eb043a)
 
 Ref: https://blog.gopheracademy.com/advent-2018/interfaces-and-reflect/
+
+## Laws of Reflection
+
+![image](https://github.com/user-attachments/assets/685455c8-8849-4f53-8e95-afa3e73d7f2c)
+
+https://go.dev/blog/laws-of-reflection
+
+Todo: Checkout https://halfrost-com.translate.goog/go_reflection/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp and https://halfrost.com/go_reflection/
+
