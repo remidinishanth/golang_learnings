@@ -53,3 +53,10 @@ It defines two important types: `Type` and `Value`.
 The typical use is to take a value with static type `interface{}` and extract its dynamic type information by calling `TypeOf`, which returns a `Type`.
 
 A call to `ValueOf` returns a `Value` representing the run-time data. `Zero` takes a `Type` and returns a `Value` representing a zero value for that type. 
+
+
+```go
+t := reflect.TypeOf(3) // a reflect.Type
+fmt.Println(t.String()) // "int"
+fmt.Println(t) // "int"
+```
