@@ -1,0 +1,5 @@
+https://blog.j7mbo.com/bypassing-golangs-lack-of-constructors/
+
+> interfaces should belong to the package that uses values of the interface type, not the package that implements those values
+
+https://dev.to/calvinmclean/the-magic-of-interfaces-in-go-5gga
